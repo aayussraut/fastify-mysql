@@ -12,7 +12,6 @@ fastify.register(require("./routes/authRoutes"));
 
 fastify.decorate("authenticate", async function (request, reply) {
   try {
-    console.log("Hello???");
     await request.jwtVerify();
   } catch (err) {
     reply.send(err);
